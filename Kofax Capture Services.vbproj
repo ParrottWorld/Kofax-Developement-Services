@@ -67,7 +67,9 @@
     <Compile Include="lib\Admin.vb">
       <DependentUpon>Admin.xsd</DependentUpon>
     </Compile>
-    <Compile Include="KofaxCaptureTools.vb" />
+    <Compile Include="KofaxCaptureTools.vb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
