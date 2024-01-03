@@ -6,14 +6,15 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5DAFFE73-3FC6-47E9-85D9-26532C21A207}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>KofaxCaptureTools</RootNamespace>
-    <AssemblyName>KofaxCaptureTools</AssemblyName>
+    <RootNamespace>KofaxCaptureServices</RootNamespace>
+    <AssemblyName>KofaxCaptureServices</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,6 +25,8 @@
     <DocumentationFile>
     </DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -60,8 +63,8 @@
     <Import Include="System.Diagnostics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CaptureModel.vb" />
-    <Compile Include="Admin.vb">
+    <Compile Include="lib\CaptureModel.vb" />
+    <Compile Include="lib\Admin.vb">
       <DependentUpon>Admin.xsd</DependentUpon>
     </Compile>
     <Compile Include="KofaxCaptureTools.vb" />
@@ -69,6 +72,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -90,7 +94,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Admin.xsd">
+    <None Include="lib\Admin.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="app.config" />

@@ -22,6 +22,7 @@ Namespace KofaxCaptureTools
         '''Serializes current EntityBase object into an XML document
         '''</summary>
         '''<returns>string XML value</returns>
+        <CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")>
         Public Overridable Function Serialize() As String
             Dim streamReader As System.IO.StreamReader = Nothing
             Dim memoryStream As System.IO.MemoryStream = Nothing
@@ -94,6 +95,7 @@ Namespace KofaxCaptureTools
             End Try
         End Function
 
+        <CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")>
         Public Overridable Overloads Sub SaveToFile(ByVal fileName As String)
             Dim streamWriter As System.IO.StreamWriter = Nothing
             Try
@@ -133,6 +135,7 @@ Namespace KofaxCaptureTools
             Return LoadFromFile(fileName, obj, exception)
         End Function
 
+        <CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")>
         Public Overloads Shared Function LoadFromFile(ByVal fileName As String) As T
             Dim file As System.IO.FileStream = Nothing
             Dim sr As System.IO.StreamReader = Nothing
