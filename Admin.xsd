@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AscentCaptureSetup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Scripts">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Script">
+                <xs:complexType>
+                  <xs:attribute name="SblScriptID" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="Type" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                  <xs:attribute name="Language" type="xs:unsignedByte" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ReleaseScripts">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ReleaseScript">
+                <xs:complexType>
+                  <xs:attribute name="SupportsNonImageFiles" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="RemainLoaded" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="SupportsKofaxPDF" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="SupportsOriginalFileName" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="SupportsMultipleInstances" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                  <xs:attribute name="ReleaseProgID" type="xs:string" use="required" />
+                  <xs:attribute name="ReleaseVersion" type="xs:string" use="required" />
+                  <xs:attribute name="SetupProgID" type="xs:string" use="required" />
+                  <xs:attribute name="SetupVersion" type="xs:string" use="required" />
+                  <xs:attribute name="DisplayName" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ImageCleanupProfiles">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="ImageCleanupProfile">
+                <xs:complexType>
+                  <xs:attribute name="WhiteNoiseGap" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="MinShadeWidth" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="MinAngle" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="DespecEnable" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="ReadOnly" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="DefaultFor" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="KofaxID" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                  <xs:attribute name="ScriptName" type="xs:string" use="required" />
+                  <xs:attribute name="DeskewEnable" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="DespecHeight" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="DespecWidth" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="BorderEnable" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="DeshadeEnable" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="FltEnable" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="FltCharSmoothing" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="FltFillLine" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="FltLightThicken" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="HorzLineEnable" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="HorzCharRepair" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="HorzMinLength" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="VertLineEnable" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="VertCharRepair" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="VertMinHeight" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="VertMaxGap" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="HorzMaxHeight" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="HorzEdgeClean" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="HorzReconHeight" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="VertMaxWidth" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="VertEdgeClean" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="VertReconWidth" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="StreakWidth" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="FltSmoothCleanPreserve" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="FltFillLinePreserve" type="xs:unsignedByte" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ColorImageCleanupProfiles">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ColorImageCleanupProfile">
+                <xs:complexType>
+                  <xs:attribute name="ReadOnly" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="DefaultFor" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="KofaxID" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ImageCompressionProfiles">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ImageCompressionProfile">
+                <xs:complexType>
+                  <xs:attribute name="Sensitivity" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="BackgroundQuality" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="PictureQuality" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="ReadOnly" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="DefaultFor" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="KofaxID" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Functions">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Function">
+                <xs:complexType>
+                  <xs:attribute name="Workflow" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                  <xs:attribute name="Order" type="xs:unsignedByte" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Processes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Process">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ReplacesFunctions">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Replaces">
+                            <xs:complexType>
+                              <xs:attribute name="FunctionName" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="ImageIndex" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="Custom" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="SupportsNonImageFiles" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="SupportsTableFields" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                  <xs:attribute name="OriginalProcessID" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="Description" type="xs:string" use="required" />
+                  <xs:attribute name="Program" type="xs:string" use="required" />
+                  <xs:attribute name="ModuleID" type="xs:string" use="required" />
+                  <xs:attribute name="VersionString" type="xs:string" use="required" />
+                  <xs:attribute name="IconFile" type="xs:string" use="required" />
+                  <xs:attribute name="Before" type="xs:string" use="required" />
+                  <xs:attribute name="After" type="xs:string" use="required" />
+                  <xs:attribute name="SplashScreenFile" type="xs:string" use="required" />
+                  <xs:attribute name="VersionNumber" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="CLP" type="xs:string" use="optional" />
+                  <xs:attribute name="SetupProgram" type="xs:string" use="optional" />
+                  <xs:attribute name="SetupProgramFile" type="xs:string" use="optional" />
+                  <xs:attribute name="AutoSignOut" type="xs:unsignedByte" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RecognitionProfiles">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="RecognitionProfile">
+                <xs:complexType>
+                  <xs:sequence minOccurs="0">
+                    <xs:element minOccurs="0" name="ShapeOptions">
+                      <xs:complexType>
+                        <xs:attribute name="LineWidth" type="xs:unsignedByte" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="AdvancedOcrOptions">
+                      <xs:complexType>
+                        <xs:attribute name="ExportFormat" type="xs:unsignedShort" use="required" />
+                        <xs:attribute name="OutputResolution" type="xs:unsignedShort" use="required" />
+                        <xs:attribute name="SpellCheckFlag" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="JPEGQuality" type="xs:unsignedByte" use="optional" />
+                        <xs:attribute name="PDFACompliance" type="xs:byte" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="BarCodeOptions">
+                      <xs:complexType>
+                        <xs:attribute name="Width" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="UseEnhancedEngine" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="BarCodeMask" type="xs:unsignedByte" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="IcrOptions">
+                      <xs:complexType>
+                        <xs:attribute name="Language" type="xs:unsignedShort" use="required" />
+                        <xs:attribute name="MarkLevel" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="TextFlag" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="Interpretation" type="xs:unsignedByte" use="optional" />
+                        <xs:attribute name="AbsoluteMachinePrintMarkLevel" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="AbsoluteHandprintMarkLevel" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="Trigrams" type="xs:unsignedShort" use="optional" />
+                        <xs:attribute name="AllowedChars" type="xs:string" use="optional" />
+                        <xs:attribute name="SyntaxMode" type="xs:unsignedByte" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="FormIDOptions" />
+                  </xs:sequence>
+                  <xs:attribute name="Type" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="ImgCompressOptID" type="xs:string" use="required" />
+                  <xs:attribute name="ReadOnly" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="DefaultFor" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="KofaxID" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                  <xs:attribute name="ScriptName" type="xs:string" use="required" />
+                  <xs:attribute name="ImageCleanupProfileName" type="xs:string" use="required" />
+                  <xs:attribute name="OriginalName" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SeparationFormIDProfiles">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="SeparationFormIDProfile">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="SeparationProfile">
+                      <xs:complexType>
+                        <xs:attribute name="Method" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="Confidence" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="Difference" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="SeparatorSheetRecognitionProfileName" type="xs:string" use="required" />
+                        <xs:attribute name="FirstPageRecognitionProfileName" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FormIDProfile">
+                      <xs:complexType>
+                        <xs:attribute name="Method" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="Confidence" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="Difference" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="PageRecognitionProfileName" type="xs:string" use="required" />
+                        <xs:attribute name="ZoneRecognitionProfileName" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="ReadOnly" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="KofaxID" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                  <xs:attribute name="ScriptName" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FieldTypes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="FieldType">
+                <xs:complexType>
+                  <xs:sequence minOccurs="0">
+                    <xs:element name="Values">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Value">
+                            <xs:complexType>
+                              <xs:attribute name="Text" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="SqlType" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="Width" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                  <xs:attribute name="OriginalName" type="xs:string" use="optional" />
+                  <xs:attribute name="ScriptName" type="xs:string" use="required" />
+                  <xs:attribute name="EnableValues" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="ForceMatch" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="Description" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DocumentClasses">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="DocumentClass">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="IndexFieldDefinitions">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="IndexFieldDefinition">
+                            <xs:complexType>
+                              <xs:attribute name="Required" type="xs:unsignedByte" use="optional" />
+                              <xs:attribute name="_2XReleaseID" type="xs:unsignedInt" use="required" />
+                              <xs:attribute name="Name" type="xs:string" use="required" />
+                              <xs:attribute name="FieldTypeName" type="xs:string" use="required" />
+                              <xs:attribute name="TableName" type="xs:string" use="required" />
+                              <xs:attribute name="DisplayLabel" type="xs:string" use="optional" />
+                              <xs:attribute name="DefaultValue" type="xs:string" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FormTypes">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="FormType">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" name="FormTypeCustomStorageStrings">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="FormTypeCustomStorageString">
+                                        <xs:complexType>
+                                          <xs:attribute name="Name" type="xs:string" use="required" />
+                                          <xs:attribute name="Value" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="RegistrationZones">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="RegistrationZone">
+                                        <xs:complexType>
+                                          <xs:attribute name="RecognitionProfileName" type="xs:string" use="required" />
+                                          <xs:attribute name="PageNumber" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="X" type="xs:unsignedShort" use="required" />
+                                          <xs:attribute name="Y" type="xs:unsignedShort" use="required" />
+                                          <xs:attribute name="ZoneTop" type="xs:unsignedShort" use="required" />
+                                          <xs:attribute name="ZoneLeft" type="xs:unsignedShort" use="required" />
+                                          <xs:attribute name="ZoneWidth" type="xs:unsignedShort" use="required" />
+                                          <xs:attribute name="ZoneHeight" type="xs:unsignedShort" use="required" />
+                                          <xs:attribute name="SearchText" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="IndexZones">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="IndexZone">
+                                        <xs:complexType>
+                                          <xs:attribute name="RecognitionProfileName" type="xs:string" use="required" />
+                                          <xs:attribute name="PageNumber" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="ZoneTop" type="xs:unsignedShort" use="required" />
+                                          <xs:attribute name="ZoneLeft" type="xs:unsignedShort" use="required" />
+                                          <xs:attribute name="ZoneWidth" type="xs:unsignedShort" use="required" />
+                                          <xs:attribute name="ZoneHeight" type="xs:unsignedShort" use="required" />
+                                          <xs:attribute name="IndexFieldDefinitionName" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="BarCodeRecognitionProfileName" type="xs:string" use="required" />
+                              <xs:attribute name="FixedPageCount" type="xs:unsignedByte" use="optional" />
+                              <xs:attribute name="SamplePageCount" type="xs:unsignedByte" use="optional" />
+                              <xs:attribute name="SamplePagePublishDirectoryNumber" type="xs:unsignedByte" use="optional" />
+                              <xs:attribute name="RegistrationConfidence" type="xs:unsignedByte" use="optional" />
+                              <xs:attribute name="IndexZoneConfidence" type="xs:unsignedByte" use="optional" />
+                              <xs:attribute name="SamplePageHDPI" type="xs:unsignedByte" use="optional" />
+                              <xs:attribute name="SamplePageVDPI" type="xs:unsignedByte" use="optional" />
+                              <xs:attribute name="SampleImageDirectoryNumber" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="Name" type="xs:string" use="required" />
+                              <xs:attribute name="ScriptName" type="xs:string" use="required" />
+                              <xs:attribute name="FormsProcessingImageCleanupProfileName" type="xs:string" use="required" />
+                              <xs:attribute name="SearchText" type="xs:string" use="required" />
+                              <xs:attribute name="NewSamplePages" type="xs:unsignedByte" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="DocumentClassCustomStorageStrings">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="DocumentClassCustomStorageString">
+                            <xs:complexType>
+                              <xs:attribute name="Name" type="xs:string" use="required" />
+                              <xs:attribute name="Value" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="KofaxPDFSelected" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                  <xs:attribute name="OriginalName" type="xs:string" use="optional" />
+                  <xs:attribute name="ScriptName" type="xs:string" use="required" />
+                  <xs:attribute name="OcrFullTextRecognitionProfileName" type="xs:string" use="required" />
+                  <xs:attribute name="KofaxPDFRecognitionProfileName" type="xs:string" use="required" />
+                  <xs:attribute name="PDFDictionary" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BatchClasses">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="BatchClass">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Modules">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Module">
+                            <xs:complexType>
+                              <xs:attribute name="ExceptionModuleID" type="xs:string" use="required" />
+                              <xs:attribute name="ModuleID" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SeparationZone">
+                      <xs:complexType>
+                        <xs:attribute name="RecognitionProfileName" type="xs:string" use="required" />
+                        <xs:attribute name="Confidence" type="xs:unsignedByte" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="DocumentClassLinks">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="DocumentClassLink">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ReleaseSetups">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ReleaseSetup">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="CustomProperties">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" name="CustomProperty">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="Name" type="xs:string" use="required" />
+                                                      <xs:attribute name="Value" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="ReleaseLinks">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" name="ReleaseLink">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="SourceType" type="xs:unsignedByte" use="optional" />
+                                                      <xs:attribute name="Source" type="xs:string" use="required" />
+                                                      <xs:attribute name="Destination" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="New" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="RelSetupID" type="xs:unsignedByte" use="required" />
+                                          <xs:attribute name="Name" type="xs:string" use="optional" />
+                                          <xs:attribute name="DocumentClassName" type="xs:string" use="required" />
+                                          <xs:attribute name="ReleaseScriptName" type="xs:string" use="required" />
+                                          <xs:attribute name="KofaxPDFDir" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="DocumentClassName" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="BatchClassCustomStorageStrings">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="BatchClassCustomStorageString">
+                            <xs:complexType>
+                              <xs:attribute name="Name" type="xs:string" use="required" />
+                              <xs:attribute name="Value" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="BatchDefNameFormat">
+                      <xs:complexType>
+                        <xs:attribute name="BatchNameFormat" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="SeparationFormIDProfileName" type="xs:string" use="required" />
+                  <xs:attribute name="ScanImageCleanupProfileName" type="xs:string" use="required" />
+                  <xs:attribute name="ModifiedDateTime" type="xs:string" use="required" />
+                  <xs:attribute name="RelStartDateTime" type="xs:string" use="required" />
+                  <xs:attribute name="RelEndDateTime" type="xs:string" use="required" />
+                  <xs:attribute name="RelPriority" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="QCReEndorseOptions" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="ScnDocSeparation" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="AlwaysPostProcess" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="EADigits" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="AdvanceBatchesInErrorModuleID" type="xs:string" use="optional" />
+                  <xs:attribute name="SupportsNonImageFiles" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="ColorImgProcOptID" type="xs:string" use="required" />
+                  <xs:attribute name="NonTiffAreNonImage" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="PdfAsImage" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="AllowInteractiveAutoFolderCreation" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="BatchClassID" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                  <xs:attribute name="OriginalBatchDefID" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="ImageDirectory" type="xs:string" use="required" />
+                  <xs:attribute name="DefaultFormTypeName" type="xs:string" use="required" />
+                  <xs:attribute name="EndorseScriptName" type="xs:string" use="required" />
+                  <xs:attribute name="LastPublished" type="xs:string" use="required" />
+                  <xs:attribute name="ExternalBatchClassID" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="BatchFieldScriptID" type="xs:string" use="required" />
+                  <xs:attribute name="ScnCapMode" type="xs:unsignedByte" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="DatabaseVersion" type="xs:unsignedByte" use="required" />
+      <xs:attribute name="DataDefinitionVersion" type="xs:unsignedByte" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
